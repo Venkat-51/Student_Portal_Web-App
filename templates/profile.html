@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h2>Welcome, {{ profile.full_name }}</h2>
+<img class="profile-pic" src="{{ profile.profile_picture.url }}" alt="Profile Picture">
+<p><b>Email:</b> {{ profile.user.email }}</p>
+<p><b>Mobile:</b> {{ profile.mobile }}</p>
+<p><b>College:</b> {{ profile.college }}</p>
+<p><b>Degree:</b> {{ profile.degree }}</p>
+<p><b>Date of Birth:</b> {{ profile.dob }}</p>
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

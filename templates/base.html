@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Student Portal{% endblock %}</title>
+    <link rel="Icon" href="/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>
