@@ -10,7 +10,8 @@ def register_view(request):
         profile_form = ProfileForm(request.POST, request.FILES)
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save(commit=False)
-            user.set_password(user.password)
+            password = user_form.cleaned_data.get('password')
+            user.set_password(password)
             user.save()
             profile = profile_form.save(commit=False)
             profile.user = user

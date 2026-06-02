@@ -4,8 +4,33 @@
 <h2>Register</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    
+    {% if user_form.non_field_errors %}
+        <div class="error-messages">
+            {% for error in user_form.non_field_errors %}
+                <p style="color: red;">{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
     {{ user_form.as_p }}
     {{ profile_form.as_p }}
+    
+    {% if user_form.errors or profile_form.errors %}
+        <div class="error-messages">
+            {% for field, errors in user_form.errors.items %}
+                {% for error in errors %}
+                    <p style="color: red;">{{ field }}: {{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+            {% for field, errors in profile_form.errors.items %}
+                {% for error in errors %}
+                    <p style="color: red;">{{ field }}: {{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    
     <button type="submit">Register</button>
 </form>
 <a href="{% url 'login' %}">Back to login</a>
