@@ -74,6 +74,8 @@ Add screenshots of:
 <img width="1365" height="674" alt="Screenshot 2026-06-12 131510" src="https://github.com/user-attachments/assets/ea51c355-3288-4017-999c-c86faaeeb56a" />
 
 * Student Dashboard
+<img width="1366" height="671" alt="Screenshot (430)" src="https://github.com/user-attachments/assets/a2953905-52c3-4ae5-8895-61616a8ff451" />
+
 * Admin Dashboard
 
 ## ⚙️ Installation
